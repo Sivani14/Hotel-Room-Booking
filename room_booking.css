@@ -1,0 +1,67 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Sevillana&family=The+Girl+Next+Door&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gotu&family=Sevillana&family=The+Girl+Next+Door&display=swap');
+
+html{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-image: url(./wallpaper.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 0%;
+    margin: 0%;
+}
+
+.poster_tint{
+    background-color: rgba(0,0,0,0.3);
+    padding: 1% 3.5%;
+    margin: 0%;
+    }
+
+    .footer_tint{
+        background-color: rgba(0,0,0,0.6);
+        margin: 0%;
+        }
+
+p, label,span{
+    font-family: Gotu;
+    color: white;
+}
+
+th,tr,td{
+    font-family: Gotu;
+    color: black;
+}
+
+.modal-body{
+    background-image: url(./modal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    font-family: Gotu;
+    color: black;
+}
+
+.note{
+    animation-name: grow;
+    animation-duration: 2s;
+    animation-delay: 3.3s;
+    /* animation-iteration-count:2, 2s; */
+}
+
+.note2{
+    animation-name: grow;
+    animation-duration: 2s;
+    animation-delay: 4.8s;
+    /* animation-iteration-count:2, 2s; */
+}
+
+@keyframes grow{
+    50%{transform: scale(1.3, 1.3);}
+}

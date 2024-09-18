@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./room_booking.css">
+    <link rel="icon"  href="./resort-icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
+    QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer ></script>
+    <script src="./room_booking.js" defer></script>
+    <title>Heaven Stay</title>
+</head>
+<body>
+    <div class="poster_tint">
+        <div class="container mx-auto ">
+            <header>
+                <div class="header">
+                    <br>
+                    <p class="fs-2 text-center m-0 mb-1">Welcome to Heaven Stay Hotel....</p>
+                </div>
+            </header>
+            <div class="row">
+                <div class="col-md-1">
+                    <!-- empty space -->
+                </div>
+    
+                <div class="col-md-10 p-1">
+                    
+                    <!-- Dates selection row section -->
+                    <div class="row p-1 d-flex justify-content-around" id="dates">
+                            <div class="col-md-3 p-1">
+                                <p >Date from......</p>
+                                <input type="date" name="f_date" id="f_date" class="w-100 m-0 form-control ">
+                                </div>
+                                <div class="col-md-3 p-1">
+                                    <p>Date to........</p>
+                                <input type="date" name="t_date" id="t_date" class="w-100 m-0 form-control ">
+                                </div>
+                    </div><br>
+                    <!-- End of dates row section -->
+    
+                    <!-- Room specification section -->
+                    <div class="row p-1 r_specifications d-flex justify-content-around" id="r_specifications">
+                        
+                        <div class="col-md-3">
+                            <p>Please specify your room type....</p>
+                            <input type="radio" name="r_type" id="deluxe" value="7000"  class="form-check-input">&nbsp;
+                            <label for="deluxe" class="form-label"> Deluxe(7k)</label> <br>
+                            <input type="radio" name="r_type" id="ac" value="3500" class="form-check-input" checked>&nbsp;
+                            <label for="ac" class="form-label"> A/C ( 3.5k )</label><br>
+                            <input type="radio" name="r_type" id="nac" value="1500" class="form-check-input" >&nbsp;
+                            <label for="nac" class="form-label"> Non - A/C ( 1.5k )</label>
+                        </div>
+    
+                        <div class="col-md-3">
+                            <p>Please specify the following....</p>
+    
+                            <div class="d-flex justify-content-between mt-4">
+                                <span>Adult</span>
+                                <input type="number" name="adult" id="adult" class="form-control w-50 p-1"  value="0" min="0" max="5">
+                            </div>
+    
+                            <div class="d-flex justify-content-between mt-4">
+                                <span>Child</span>
+                                <input type="number" name="child" id="child" class="form-control w-50 p-1" value="0" min="0" max="5">
+                            </div>
+    
+                        </div>
+                    </div>
+                    <!-- End of Room specification section -->
+                    
+                    <!-- Note -->
+                    <div class="row text-center">
+                        <div class="d-flex justify-content-center my-2 note">
+                            <p><b>Kind Note: Max no. of persons for a single room are 4 [Adults-2 + Child-2] <br>
+                                If exceeds, the additional charges will be added as follows &#128071;&#127995;
+                            </b></p>
+                        </div>
+        
+                        <div class="d-flex justify-content-center" id="charges_table">
+                            <table cellspacing="0" cellpadding="5" class="table table-hover border-black table-bordered text-center w-75">
+                                <tr><th colspan="4" class="bg-info-subtle">Additional charges</th></tr>
+                                <tr class="bg-info-subtle">
+                                    <th class="bg-info-subtle">Category</th>
+                                    <th class="bg-info-subtle">Deluxe</th>
+                                    <th class="bg-info-subtle">A/C</th>
+                                    <th class="bg-info-subtle">Non A/C</th>
+                                </tr>
+                                <tr>
+                                    <td>Adult</td>
+                                    <td>2000</td>
+                                    <td>1000</td>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <td>Child</td>
+                                    <td>1000</td>
+                                    <td>500</td>
+                                    <td>300</td>
+                                </tr>
+                            </table><br><br>
+                        </div>
+                        <div class="d-flex justify-content-center m-2 note2">
+                            <p><b>Another Note: Max no. of persons for a single room including additional people should be 5 people <br>
+                                If exceeds, please book another room also &#128519;</b></p>
+                        </div>
+                        <button type="submit" style="font-family: Gotu;" class="btn btn-outline-light w-25 mx-auto" id="submit_btn">
+                        <!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
+                            <b>Submit</b>
+                        </button>
+
+                        <!-- Bootstrap Modal -->
+                        <div id="modal"></div>
+                        <!-- Bootstrap Modal ends here... -->
+
+                    </div><br>
+                </div><!-- Content closing div md-10 -->
+    
+                <div class="col-md-1">
+                    <!-- empty space -->
+                </div>
+    
+            </div><!-- This is whole row closing div -->
+        </div><!-- This is container closing div -->
+    </div> <!-- This is poster tint closing div -->
+    <footer class="d-flex justify-content-around footer_tint py-2">
+        <p class="mb-0"> Designed & Developed by @Sivani_Dhanyasi &#x2764;</p>
+        <p class="mb-0">Have something to share!? Mail&#128231; me &#128073;&#127995;<a href="mailto:sivanidhanyasi@gmail.com">Here!</a> </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
