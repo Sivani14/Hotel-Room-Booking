@@ -56,7 +56,7 @@ document.getElementById("submit_btn").onclick = function() {
         var ch_people=child+ad_child;
         
         if(people>5){
-            alert("You can't book as the max people number exceeds over 5 people.... We've already mentioned at below the Charges table. Kindly read the note...!");
+            alert("You can't book as the max people number exceeds over 5 people.... We've already mentioned at below the Charges table. Kindly, Please read the note...!");
         }
         else{
 
