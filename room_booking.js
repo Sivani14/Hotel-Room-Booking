@@ -51,10 +51,10 @@ document.getElementById("submit_btn").onclick = function() {
         var s_gst=0;
         var ad_adult=0;
         var ad_child=0;
-        var people = adult+child+ad_adult+ad_child;
-        var ad_people=adult+ad_adult;
-        var ch_people=child+ad_child;
-        
+        var people = adult+child;
+        var rg_adult=0;
+        var rg_child=0;
+
         if(people>5){
             alert("You can't book as the max people number exceeds over 5 people.... We've already mentioned at below the Charges table. Kindly, Please read the note...!");
         }
@@ -81,6 +81,8 @@ document.getElementById("submit_btn").onclick = function() {
                             a_bill=ad_adult*2000;
                             // alert("your bill is "+(bill+a_bill)+" for " +days+" day(s) with ad+adult "+ad_adult);
                         }
+                        rg_adult=adult-ad_adult;
+                                // alert("regular adults...."+rg_adult);
                     if(child>2)
                         {
                             ad_child=child-2;
@@ -88,6 +90,8 @@ document.getElementById("submit_btn").onclick = function() {
                             c_bill=ad_child*1000;
                             // alert("your bill is "+(bill+c_bill)+" for " +days+" day(s)with ad+child "+ad_child);
                         }
+                        rg_child=child-ad_child;
+                                // alert("regular childs...."+rg_child);
                         tbill=bill+a_bill+c_bill;
                         tbill= tbill+gst(tbill);
                         // alert("Your total bill "+tbill+" with taxes for DELUXE room");
@@ -105,6 +109,8 @@ document.getElementById("submit_btn").onclick = function() {
                                 a_bill=ad_adult*1000;
                                 // alert("your bill is "+(bill+a_bill)+" for " +days+" day(s) with ad+adult "+ad_adult);
                             }
+                            rg_adult=adult-ad_adult;
+                                // alert("regular adults...."+rg_adult);
                         if(child>2)
                             {
                                 ad_child=child-2;
@@ -112,6 +118,8 @@ document.getElementById("submit_btn").onclick = function() {
                                 c_bill=ad_child*500;
                                 // alert("your bill is "+(bill+c_bill)+" for " +days+" day(s)with ad+adult "+ad_child);
                             }
+                            rg_child=child-ad_child;
+                                // alert("regular childs...."+rg_child);
                             tbill=bill+a_bill+c_bill;
                             tbill= tbill+gst(tbill);
                             // alert("Your total bill "+tbill+" with taxes for AC room");
@@ -129,6 +137,8 @@ document.getElementById("submit_btn").onclick = function() {
                                     a_bill=ad_adult*500;
                                     // alert("your bill is "+(bill+a_bill)+" for " +days+" day(s) with ad+adult "+ad_adult);
                                 }
+                                rg_adult=adult-ad_adult;
+                                // alert("regular adults...."+rg_adult);
                             if(child>2)
                                 {
                                     ad_child=child-2;
@@ -136,6 +146,8 @@ document.getElementById("submit_btn").onclick = function() {
                                     c_bill=ad_child*300;
                                     // alert("your bill is "+(bill+c_bill)+" for " +days+" day(s)with ad+adult "+ad_child);
                                 }
+                                rg_child=child-ad_child;
+                                // alert("regular childs...."+rg_child);
                                 tbill=bill+a_bill+c_bill;
                                 tbill= tbill+gst(tbill);
                                 // alert("Your total bill "+tbill+" with taxes for NON AC room");
@@ -169,8 +181,8 @@ document.getElementById("submit_btn").onclick = function() {
                                     -------------------------------------------------<br>
                                     <b>Regular</b><br>
                                     -------------------------------------------------<br>
-                                    Adult &nbsp;                                           :&nbsp;&nbsp;${ad_people}<br>
-                                    Child&nbsp;&nbsp;                                             :&nbsp;&nbsp;${ch_people}<br><br>
+                                    Adult &nbsp;                                           :&nbsp;&nbsp;${rg_adult}<br>
+                                    Child&nbsp;&nbsp;                                             :&nbsp;&nbsp;${rg_child}<br><br>
                                     <b>Additional Charges for</b> <br>
                                     <b>--------------------------------------------------</b><br>
                                     &nbsp;&nbsp; *Adults&nbsp;       :&nbsp;&nbsp; ${ad_adult} &nbsp; [fare &nbsp;${a_bill}/-]<br>
